@@ -9,7 +9,7 @@ import paho.mqtt.client as mqtt
 import sys
 #def main es el metodo donde se generan los datos aleatorios de la estacion meteorologica de la ciudad de buenos aires
 #la estacion climatica sobre la cual simulamos es la de invierno
-broker = "192.168.0.210"
+broker = "192.168.0.120"
 pasos=0
 def on_subscribe(mqttc, obj, mid, granted_qos):
     print("Subscribed: " + str(mid) + " " + str(granted_qos))
