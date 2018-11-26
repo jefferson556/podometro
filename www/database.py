@@ -1,4 +1,4 @@
-from models import Samples
+from models import Muestras
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

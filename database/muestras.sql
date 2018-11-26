@@ -31,12 +31,13 @@ SET time_zone = "-03:00";
 
 CREATE TABLE `muestras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pasos` float(11) NOT NULL,
-  `distancia` float(11) NOT NULL,
-  `calorias` float(11) NOT NULL,
-  `velocidad` float(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+  `pasos` float(11) ,
+  `distancia` float(11) ,
+  `calorias` float(11) ,
+  `velocidad` float(11) 
+  PRIMARY KEY  (`id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+ 
 --
 -- Índices para tablas volcadas
 --

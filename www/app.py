@@ -4,7 +4,7 @@ from aux_pro import Process
 from flask import Flask
 from flask import render_template
 from database import Database
-from models import Samples
+from models import Muestras
 
 app = Flask(__name__)
 db  = Database()
