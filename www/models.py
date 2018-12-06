@@ -20,11 +20,4 @@ class Muestras(Base):
         self.calorias=calorias
         self.velocidad=velocidad
 
-    def serialize(self):
-    	return{
-    		'id' : self.id,
-    		'pasos' : self.pasos,
-    		'distancia' : self.distancia,
-    		'calorias' : self.calorias,
-    		'velocidad' : self.velocidad
-    	}
+   

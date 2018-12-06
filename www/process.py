@@ -9,7 +9,7 @@ import paho.mqtt.client as mqtt
 import sys
 #def main es el metodo donde se generan los datos aleatorios de la estacion meteorologica de la ciudad de buenos aires
 #la estacion climatica sobre la cual simulamos es la de invierno
-broker = "192.168.0.120"
+broker = "10.0.2.15"
 pasos=0
 db=None
 session=None
@@ -48,13 +48,13 @@ def main ():
   global samples
   db = Database()
   session = db.get_session()
-   
   mqttc = mqtt.Client()
-  mqttc.connect(broker, 1883, 60)
+  mqttc.connect(broker,1883, 60)
   mqttc.subscribe("/pasos", 0)
   mqttc.on_subscribe = on_subscribe
   mqttc.on_message = on_message
   mqttc.loop_forever()
+
 
 if __name__ == '__main__':
   main()

@@ -18,9 +18,9 @@ class Database(object):
 
     def get_last(self):
         ultima=0
-        #session = self.get_session()
-        #ultima = session.query(Samples).order_by(Samples.id.desc()).first()
-        #session.close()
+        session = self.get_session()
+        ultima = session.query(Muestras).order_by(Muestras.id.desc()).first()
+        session.close()
         return ultima
     ################################
 

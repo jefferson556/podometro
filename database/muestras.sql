@@ -44,10 +44,7 @@ CREATE TABLE `muestras` (
 
 --
 -- Indices de la tabla `samples`
---
-ALTER TABLE `muestras`
-  ADD PRIMARY KEY (`id`);
-
+ 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
