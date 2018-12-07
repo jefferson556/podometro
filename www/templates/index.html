@@ -43,25 +43,84 @@
 
 </div>
 
+<div class="container">    
+<div class="row">
+   
+      <div class="col-8">
+                <div class="container">
+
+                        <div class="table-responsive">
+                                            <table  class="table table-bordered">
+                                                <tbody id="objetivos">                            
+                                                    <tr class="p-3 mb-2 bg-primary text-red">
+                                                        <th colspan="2">
+                                                            <span class="strong ">Objetivos  Podometro</span> 
+                                                        </th>
+                                                    </tr>
+                                                                                        
+                                                        <tr>
+                                                             
+                                                            <td> Objetivo de Pasos:</td> <td id="objetivoDePasos"></td>
+                                                             
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>Objetivo de Distancia(m):  </td> <td id="objetivoDeDistancia">  </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Objetivo de Calorias:</td>
+                                                            <td id="objetivoCalorias"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Objetivo de Velocidad(m/s):</td>
+                                                            <td id="objetivoVelocidad">   </td>
+                                                        </tr>       
+                                                </tbody>
+                                            </table>
+                        </div>
+                </div>
+<p id="info"></p>
+
+
+      </div>
+</div>
+ 
+
+</div>
 
 
      <script type="text/javascript">
-    $(document).ready(function() { var refreshId = setInterval( function(){ 
-      
+      var ObjetivoPasos=8
+    $(document).ready(function() { 
+      var refreshId = setInterval( function(){ 
         $.ajax({
             url: "/_get_data/",
             type: "POST",
             success: function(resp){
                 $('table#response').empty().html(resp.data) 
+                 var pasos = document.getElementById('idPasos').innerText;
+                 var distancia = document.getElementById('idDistancia').innerText;
+                 var calorias = document.getElementById('idCalorias').innerText;
+                 var Velocidad = document.getElementById('idVelocidad').innerText;
+                 objp=ObjetivoPasos-pasos
+                if(objp > 0)
+                 document.getElementById("objetivoDePasos").innerHTML = "pasos para completar objetivo" +" "+ objp
+                else
+                  document.getElementById("objetivoDePasos").innerHTML = "objetivo cumplido"  
             }
         });
-      }, 1000 ); 
-
+      
+       
+     
+           
+       
+      }, 5000); 
      });
   </script>
 
 
-
+ <!--no lo uso
+-->
 
 <script type="text/javascript">
      function getParameterByName(name) 
